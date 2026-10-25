@@ -6,7 +6,7 @@
 /*   By: icorrale <icorrale@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 12:38:55 by icorrale          #+#    #+#             */
-/*   Updated: 2026/10/25 17:36:25 by icorrale         ###   ########.fr       */
+/*   Updated: 2026/10/25 17:44:07 by icorrale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ t_Args	*parse_args(int argc, char **argv)
 	args->time_to_refactor = atoi(argv[5]);
 	args->number_of_compiles_required = atoi(argv[6]);
 	args->dongle_cooldown = atoi(argv[7]);
-	args->scheduler = atoi(argv[8]);
-
+	args->scheduler = argv[8];
 	return (args);
 }
