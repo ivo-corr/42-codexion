@@ -6,7 +6,7 @@
 /*   By: icorrale <icorrale@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 12:38:55 by icorrale          #+#    #+#             */
-/*   Updated: 2026/10/25 16:59:22 by icorrale         ###   ########.fr       */
+/*   Updated: 2026/10/25 17:04:58 by icorrale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 #include <stdlib.h>
 #include "codexion.h"
 
+t_Args	*parse_args(int argc, char **argv);
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_Args	*args;
 
@@ -26,7 +27,6 @@ int main(int argc, char **argv)
 	{
 		return (-1);
 	}
-
 }
 
 
@@ -35,7 +35,10 @@ t_Args	*parse_args(int argc, char **argv)
 	t_Args	args;
 
 	if (argc != 9)
+	{
+		printf("Usage: ");
 		return (NULL);
+	}
 	args.number_of_coders = atoi(argv[1]);
 	args.time_to_burnout = atoi(argv[2]);
 	args.time_to_compile = atoi(argv[3]);
