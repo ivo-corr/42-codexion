@@ -6,7 +6,7 @@
 /*   By: icorrale <icorrale@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 12:38:55 by icorrale          #+#    #+#             */
-/*   Updated: 2026/10/25 17:19:43 by icorrale         ###   ########.fr       */
+/*   Updated: 2026/10/25 17:36:25 by icorrale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,8 @@ int	main(int argc, char **argv)
 	printf("Codexion\n");
 	args = parse_args(argc, argv);
 	if (!args)
-	{
 		return (1);
-	}
 }
-
 
 t_Args	*parse_args(int argc, char **argv)
 {
@@ -36,7 +33,12 @@ t_Args	*parse_args(int argc, char **argv)
 
 	if (argc != 9)
 	{
-		printf("Usage: ");
+		printf("Usage: ./codexion\n\t<int:number_of_coders>");
+		printf("\n\t<int:time_to_burnout>\n\t<int:time_to_compile>");
+		printf("\n\t<int:time_to_debug>\n\t<int:time_to_refactor>");
+		printf("\n\t<int:number_of_compiles_required>");
+		printf("\n\t<int:dongle_cooldown>");
+		printf("\n\t<str:scheduler:'fifo' or 'edf'>\n");
 		return (NULL);
 	}
 	args = malloc(sizeof(t_Args));
