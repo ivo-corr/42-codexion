@@ -6,7 +6,7 @@
 /*   By: icorrale <icorrale@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 12:38:55 by icorrale          #+#    #+#             */
-/*   Updated: 2026/10/25 17:04:58 by icorrale         ###   ########.fr       */
+/*   Updated: 2026/10/25 17:19:43 by icorrale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,31 @@ int	main(int argc, char **argv)
 	args = parse_args(argc, argv);
 	if (!args)
 	{
-		return (-1);
+		return (1);
 	}
 }
 
 
 t_Args	*parse_args(int argc, char **argv)
 {
-	t_Args	args;
+	t_Args	*args;
 
 	if (argc != 9)
 	{
 		printf("Usage: ");
 		return (NULL);
 	}
-	args.number_of_coders = atoi(argv[1]);
-	args.time_to_burnout = atoi(argv[2]);
-	args.time_to_compile = atoi(argv[3]);
-	args.time_to_debug = atoi(argv[4]);
-	args.time_to_refactor = atoi(argv[5]);
-	args.number_of_compiles_required = atoi(argv[6]);
-	args.dongle_cooldown = atoi(argv[7]);
-	args.scheduler = atoi(argv[8]);
+	args = malloc(sizeof(t_Args));
+	if (!args)
+		return (NULL);
+	args->number_of_coders = atoi(argv[1]);
+	args->time_to_burnout = atoi(argv[2]);
+	args->time_to_compile = atoi(argv[3]);
+	args->time_to_debug = atoi(argv[4]);
+	args->time_to_refactor = atoi(argv[5]);
+	args->number_of_compiles_required = atoi(argv[6]);
+	args->dongle_cooldown = atoi(argv[7]);
+	args->scheduler = atoi(argv[8]);
 
-	return (&args);
+	return (args);
 }
