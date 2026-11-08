@@ -13,14 +13,16 @@
 #include "codexion.h"
 
 t_Args	*parse_args(int argc, char **argv);
+t_Coder	**populate_coders(int nr_of_coders);
 
 int	main(int argc, char **argv)
 {
 	t_Args	*args;
+	t_Coder	**coders;
 
 	printf("Codexion\n");
 	args = parse_args(argc, argv);
 	if (!args)
 		return (1);
-
+	coders = populate_coders(args->number_of_coders);
 }

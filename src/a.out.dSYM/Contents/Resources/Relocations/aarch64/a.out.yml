@@ -1,0 +1,15 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     a.out
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x10000395C, symSize: 0x78 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x10000395C, symSize: 0x78 }
+  - { offsetInCU: 0x26, offset: 0x16D, size: 0x8, addend: 0x0, symName: _print_usage, symObjAddr: 0x0, symBinAddr: 0x1000039D4, symSize: 0x58 }
+  - { offsetInCU: 0x41, offset: 0x188, size: 0x8, addend: 0x0, symName: _print_usage, symObjAddr: 0x0, symBinAddr: 0x1000039D4, symSize: 0x58 }
+  - { offsetInCU: 0x56, offset: 0x19D, size: 0x8, addend: 0x0, symName: _is_number, symObjAddr: 0x58, symBinAddr: 0x100003A2C, symSize: 0x8C }
+  - { offsetInCU: 0x8C, offset: 0x1D3, size: 0x8, addend: 0x0, symName: _validate_args, symObjAddr: 0xE4, symBinAddr: 0x100003AB8, symSize: 0x114 }
+  - { offsetInCU: 0xD0, offset: 0x217, size: 0x8, addend: 0x0, symName: _parse_args, symObjAddr: 0x1F8, symBinAddr: 0x100003BCC, symSize: 0x134 }
+  - { offsetInCU: 0x26, offset: 0x30B, size: 0x8, addend: 0x0, symName: _free_coders_list, symObjAddr: 0x0, symBinAddr: 0x100003D00, symSize: 0x68 }
+  - { offsetInCU: 0x33, offset: 0x318, size: 0x8, addend: 0x0, symName: _free_coders_list, symObjAddr: 0x0, symBinAddr: 0x100003D00, symSize: 0x68 }
+  - { offsetInCU: 0x65, offset: 0x34A, size: 0x8, addend: 0x0, symName: _populate_coders, symObjAddr: 0x68, symBinAddr: 0x100003D68, symSize: 0xFC }
+...

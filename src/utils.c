@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "utils.h"
+#include <ctype.h>
 
 void	print_usage(void)
 {
@@ -22,9 +23,18 @@ void	print_usage(void)
 	printf("\n\t<str:scheduler:'fifo' or 'edf'>\n");
 }
 
-int	isNumber(char *str)
+int	is_number(char *str)
 {
-	return (0);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (!isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 int	validate_args(int argc, char **argv)
@@ -36,11 +46,12 @@ int	validate_args(int argc, char **argv)
 	{
 		return (0);
 	}
-	i = 0;
-	while (i < argc - 1)
+	i = 1;
+	while (i < (argc - 1))
 	{
-		if (!isNumber(argv[i]) || atoi(argv[i]) < 0)
+		if (!is_number(argv[i]) || atoi(argv[i]) < 0)
 			return (0);
+		i++;
 	}
 	return (1);
 }

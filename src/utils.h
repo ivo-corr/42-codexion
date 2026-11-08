@@ -15,6 +15,17 @@
 #include <string.h>
 
 
+typedef struct s_Dongle
+{
+	int	id;
+	int	in_use;
+}	t_Dongle;
+
+typedef struct s_Coder
+{
+	int	id;
+}	t_Coder;
+
 typedef struct s_Args
 {
 	int		number_of_coders;
@@ -28,3 +39,4 @@ typedef struct s_Args
 }	t_Args;
 
 t_Args	*parse_args(int argc, char **argv);
+t_Coder	**populate_coders(int nr_of_coders);
