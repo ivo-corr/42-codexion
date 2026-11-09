@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: icorrale <icorrale@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 17:50:56 by icorrale          #+#    #+#             */
-/*   Updated: 2026/10/25 18:56:23 by icorrale         ###   ########.fr       */
+/*   Updated: 2026/11/09 17:24:49 by icorrale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ t_Coder	**populate_coders(int nr_of_coders)
 			return (NULL);
 		}
 		tmp->id = i;
+		pthread_create(&tmp->thread, NULL, coder_routine, tmp);
 		coders[i - 1] = tmp;
 		coders[i] = NULL;
 		i++;

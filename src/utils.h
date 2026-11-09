@@ -6,14 +6,16 @@
 /*   By: icorrale <icorrale@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/25 17:50:05 by icorrale          #+#    #+#             */
-/*   Updated: 2026/10/25 18:15:47 by icorrale         ###   ########.fr       */
+/*   Updated: 2026/11/09 17:16:59 by icorrale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <sys/time.h>
+#include <unistd.h>
+#include <pthread.h>
 
 typedef struct s_Dongle
 {
@@ -23,7 +25,8 @@ typedef struct s_Dongle
 
 typedef struct s_Coder
 {
-	int	id;
+	int			id;
+	pthread_t	thread;
 }	t_Coder;
 
 typedef struct s_Args
@@ -40,3 +43,4 @@ typedef struct s_Args
 
 t_Args	*parse_args(int argc, char **argv);
 t_Coder	**populate_coders(int nr_of_coders);
+void	*coder_routine(void *arg);
